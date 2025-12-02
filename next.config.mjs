@@ -196,6 +196,9 @@ const nextConfig = {
 
       // Anciennes URLs Nice/Toulouse héritées du template – pour Paris, on redirige simplement vers la page quartiers Paris
       { source: '/quartiers-nice/', destination: '/quartiers-paris/', permanent: true },
+      // Alias pour éviter une 404 sur /paris/ → renvoie vers la page des quartiers parisiens
+      { source: '/paris/', destination: '/quartiers-paris/', permanent: true },
+      { source: '/paris', destination: '/quartiers-paris/', permanent: true },
 
       // ANCIENNES URLs
       { source: '/estimation-demenagement-nice/', destination: '/estimation-rapide/', permanent: true },
