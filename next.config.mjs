@@ -194,33 +194,8 @@ const nextConfig = {
       { source: '/demenagement/demenagement-avec-animaux-nice', destination: '/blog/satellites/demenagement-avec-animaux-nice/', permanent: true },
       { source: '/blog/location-camion-demenagement-nice/cartons-gratuits-nice-ou-trouver', destination: '/blog/satellites/cartons-gratuits-ou-trouver-nice/', permanent: true },
 
-      // URLS TOULOUSE sur site NICE (erreur massive)
-      { source: '/toulouse', destination: '/', permanent: true },
-      { source: '/Toulouse/saint-cyprien', destination: '/quartiers-nice/', permanent: true },
-      { source: '/Toulouse/carmes', destination: '/quartiers-nice/', permanent: true },
-      { source: '/Toulouse/capitole', destination: '/quartiers-nice/', permanent: true },
-      { source: '/Toulouse/jean-jaures', destination: '/quartiers-nice/', permanent: true },
-      { source: '/Toulouse/compans', destination: '/quartiers-nice/', permanent: true },
-      { source: '/quartiers-Toulouse', destination: '/quartiers-nice/', permanent: true },
-      { source: '/devis-demenagement-toulouse/', destination: '/estimation-rapide/', permanent: true },
-      { source: '/prix-demenagement-toulouse/', destination: '/blog/prix-demenagement-nice/prix-demenagement-nice-guide/', permanent: true },
-      { source: '/devis-demenagement-toulouse-cauderan/', destination: '/quartiers-nice/', permanent: true },
-      { source: '/devis-demenagement-toulouse-saint-pierre/', destination: '/quartiers-nice/', permanent: true },
-      { source: '/devis-demenagement-toulouse-chartrons/', destination: '/quartiers-nice/', permanent: true },
-      { source: '/Toulouse-vers-Toulouse', destination: '/', permanent: true },
-      { source: '/Toulouse-vers-paris', destination: '/nice-vers-paris/', permanent: true },
-      { source: '/Toulouse-vers-lyon', destination: '/nice-vers-lyon/', permanent: true },
-      { source: '/estimation-demenagement-toulouse/', destination: '/estimation-rapide/', permanent: true },
-
-      // QUARTIERS BORDEAUX sur site Nice
-      { source: '/nice/pessac', destination: '/quartiers-nice/', permanent: true },
-      { source: '/nice/bastide', destination: '/quartiers-nice/', permanent: true },
-      { source: '/nice/merignac', destination: '/quartiers-nice/', permanent: true },
-      { source: '/nice/cauderan', destination: '/quartiers-nice/', permanent: true },
-      { source: '/nice/chartrons', destination: '/quartiers-nice/', permanent: true },
-      { source: '/devis-demenagement-nice-cauderan/', destination: '/quartiers-nice/', permanent: true },
-      { source: '/devis-demenagement-nice-saint-pierre/', destination: '/quartiers-nice/', permanent: true },
-      { source: '/devis-demenagement-nice-chartrons/', destination: '/quartiers-nice/', permanent: true },
+      // Anciennes URLs Nice/Toulouse héritées du template – pour Paris, on redirige simplement vers la page quartiers Paris
+      { source: '/quartiers-nice/', destination: '/quartiers-paris/', permanent: true },
 
       // ANCIENNES URLs
       { source: '/estimation-demenagement-nice/', destination: '/estimation-rapide/', permanent: true },

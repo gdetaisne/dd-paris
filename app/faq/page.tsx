@@ -616,7 +616,7 @@ export default function FAQPage() {
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                   <span>Déménagement {city.nameCapitalized}</span>
                 </a>
-                <a href="/quartiers-nice/" className="block text-[#6BCFCF] hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <a href={`/quartiers-${city.slug}/`} className="block text-[#6BCFCF] hover:text-white transition-colors text-sm flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                   <span>Tous les quartiers</span>
                 </a>
