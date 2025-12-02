@@ -6,6 +6,7 @@ import { getCityData } from "@/lib/cityData";
 import { getAverageRating, getReviewsForCity } from "@/lib/reviews";
 
 const citySlugs = [
+  "paris",
   "strasbourg",
   "nice",
   "lyon",
@@ -24,6 +25,7 @@ function resolveCityFromHostname(): string {
   const hostname = window.location.hostname.toLowerCase();
   if (hostname.includes("toulousain")) return "toulouse";
   if (hostname.includes("bordeaux-demenageur")) return "bordeaux";
+  if (hostname.includes("parisien")) return "paris";
   const match = citySlugs.find((slug) => hostname.includes(slug));
   return match ?? "marseille";
 }

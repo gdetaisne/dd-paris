@@ -12,7 +12,8 @@ function getCityFromHostname(): string {
   if (hostname.includes('toulousain')) return 'toulouse';
   if (hostname.includes('bordeaux-demenageur')) return 'bordeaux';
   // Pattern standard: devis-demenageur-ville.fr
-  const cities = ['strasbourg', 'nice', 'lyon', 'marseille', 'nantes', 'lille', 'rennes', 'rouen', 'montpellier', 'toulouse', 'bordeaux'];
+  // On inclut également "paris" pour le domaine devis-demenageur-parisien.fr
+  const cities = ['paris', 'strasbourg', 'nice', 'lyon', 'marseille', 'nantes', 'lille', 'rennes', 'rouen', 'montpellier', 'toulouse', 'bordeaux'];
   const found = cities.find(city => hostname.includes(city));
   return found || 'nice';
 }
@@ -27,6 +28,18 @@ export default function Header() {
     const citySlug = getCityFromHostname();
     return getCityData(citySlug);
   }, []);
+
+  // Libellé affiché à côté du logo
+  // Cas spécial : domaine "devis-demenageur-parisien.fr" → afficher "Parisien"
+  const cityLabel = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname.toLowerCase();
+      if (hostname.includes('parisien')) {
+        return 'Parisien';
+      }
+    }
+    return city.nameCapitalized;
+  }, [city]);
 
   // Construire zonesItems dynamiquement depuis cityData
   const zonesItems = useMemo(() => {
@@ -97,7 +110,7 @@ export default function Header() {
           <div className="text-white font-semibold tracking-wide text-sm md:text-base leading-tight flex flex-col w-28 md:w-32">
             <span>Devis</span>
             <span>Déménageur</span>
-            <span>{city.nameCapitalized}</span>
+            <span>{cityLabel}</span>
           </div>
         </Link>
 
