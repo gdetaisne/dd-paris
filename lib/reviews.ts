@@ -9,6 +9,29 @@ export type ReviewProfile = {
 };
 
 const reviewProfiles: Record<string, ReviewProfile[]> = {
+  paris: [
+    {
+      author: 'Camille — Montmartre',
+      role: 'Product designer',
+      rating: 4.9,
+      summary: '5 devis vraiment comparables',
+      body: "En 30 minutes j'ai rempli le dossier et reçu 5 devis alignés sur le même cahier des charges. Comparer les options pour mon déménagement à Paris a été super simple."
+    },
+    {
+      author: 'Thomas — Batignolles',
+      role: 'Ingénieur',
+      rating: 4.8,
+      summary: 'Zéro démarchage, tout se fait à mon rythme',
+      body: "Le dossier anonyme évite les appels en boucle. Je garde un seul fil de discussion et je choisis quand rappeler les déménageurs."
+    },
+    {
+      author: 'Sarah — Quartier Latin',
+      role: 'Avocate',
+      rating: 5,
+      summary: 'Process fluide malgré un planning serré',
+      body: "Les 5 devis reçus respectaient exactement mes contraintes de dates et d'accès en centre-ville. Je me suis sentie accompagnée de A à Z."
+    }
+  ],
   marseille: [
     {
       author: 'Julie — 42 m², Vieux-Port',

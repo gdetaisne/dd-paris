@@ -43,12 +43,21 @@ export default function Header() {
 
   // Construire zonesItems dynamiquement depuis cityData
   const zonesItems = useMemo(() => {
+    // Pour Paris, afficher tous les arrondissements mais sans créer de nouvelles routes (éviter les 404)
+    if (city.slug === 'paris') {
+      return city.neighborhoods.map((n) => ({
+        href: '#', // pas de navigation vers une page inexistante
+        label: n.name,
+      }));
+    }
+
+    // Comportement standard pour les autres villes
     return [
       { href: `/${city.slug}`, label: city.nameCapitalized },
-      ...city.neighborhoods.slice(0, 5).map(n => ({
+      ...city.neighborhoods.slice(0, 5).map((n) => ({
         href: `/${city.slug}/${n.slug}`,
-        label: n.name
-      }))
+        label: n.name,
+      })),
     ];
   }, [city]);
 
